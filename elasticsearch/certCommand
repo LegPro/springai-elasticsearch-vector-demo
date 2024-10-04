@@ -1,0 +1,4 @@
+#in C:/temp
+openssl s_client -showcerts -connect localhost:9200 </dev/null | sed -n -e '/-.BEGIN/,/-.END/ p' > certifs.cer
+#in jdk/bin
+keytool -import -alias elasticsearchcert -file "C:\temp\certifs.cer" -keystore "C:\Users\vhinu\.jdks\openjdk-23\lib\security\cacerts"
